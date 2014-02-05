@@ -1,0 +1,659 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Bookmarks:
+'H
+	/home/stas/
+	../
+'b
+	/home/stas/bin/
+	../
+'h
+	/home/stas/
+	../
+'z
+	/home/stas/.vifm
+	../
+
+# TUI:
+al
+q1
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/stas/moz/l20n/js/grunt
+	tasks/
+2
+d/home/stas/moz/l20n/js/grunt/tasks
+	compile.js
+1
+d/home/stas/moz/l20n/js/grunt
+	config/
+1
+d/home/stas/moz/l20n/js/grunt/config
+	clean.js
+2
+d/home/stas/moz/l20n/js/grunt
+	tasks/
+2
+d/home/stas/moz/l20n/js/grunt/tasks
+	compile.js
+1
+d/home/stas/moz/l20n/js/grunt
+	var/
+2
+d/home/stas/moz/l20n/js/grunt/var
+	insecure.js
+1
+d/home/stas/moz/l20n/js/grunt
+	config/
+1
+d/home/stas/moz/l20n/js
+	grunt/
+6
+d/home/stas/moz/l20n/js/grunt
+	config/
+1
+d/home/stas/moz/l20n/js/grunt/config
+	lint/
+1
+d/home/stas/moz/l20n/js/grunt/config/lint
+	merge-conflict.js
+3
+d/home/stas/moz/l20n/js/grunt/config
+	uglify.js
+5
+d/home/stas/moz/l20n/js/grunt
+	config/
+1
+d/home/stas/moz/l20n/js
+	grunt/
+6
+d/home/stas/moz/l20n/js/grunt
+	config/
+1
+d/home/stas/moz/l20n/js/grunt/config
+	concat.js
+3
+d/home/stas/moz/l20n/js/grunt
+	config/
+1
+d/home/stas/moz/l20n/js
+	grunt/
+6
+d/home/stas/moz/l20n/js/grunt
+	config/
+1
+d/home/stas/moz/l20n/js/grunt/config
+	watch.js
+6
+d/home/stas/moz/l20n/js/grunt
+	config/
+1
+d/home/stas/moz/l20n/js
+	grunt/
+6
+d/home/stas/moz/l20n/js/grunt
+	config/
+1
+d/home/stas/moz/l20n/js/grunt/config
+	watch.js
+6
+d/home/stas/moz/l20n/js/grunt
+	config/
+1
+d/home/stas/moz/l20n/js/grunt/config
+	watch.js
+6
+d/home/stas/moz/l20n/js/grunt
+	config/
+1
+d/home/stas/moz/l20n/js
+	grunt/
+6
+d/home/stas/moz/l20n/js/grunt
+	config/
+1
+d/home/stas/moz/l20n/js/grunt/config
+	lint/
+1
+d/home/stas/moz/l20n/js/grunt/config/lint
+	jshint.js
+1
+d/home/stas/moz/l20n/js/grunt/config
+	concat.js
+3
+d/home/stas/moz/l20n/js/grunt
+	config/
+1
+d/home/stas/moz/l20n/js
+	lib/
+7
+d/home/stas/moz/l20n/js/lib
+	l20n/
+2
+d/home/stas/moz/l20n/js/lib/l20n
+	parser.js
+5
+d/home/stas/moz/l20n/js/lib
+	client/
+1
+d/home/stas/moz/l20n/js/lib/client
+	l20n/
+1
+d/home/stas/moz/l20n/js/lib/client/l20n
+	platform/
+1
+d/home/stas/moz/l20n/js/lib/client/l20n/platform
+	io.js
+1
+d/home/stas/moz/l20n/js/lib/client/l20n
+	platform/
+1
+d/home/stas/moz/l20n/js/lib/client
+	l20n/
+1
+d/home/stas/moz/l20n/js/lib
+	l20n/
+2
+d/home/stas/moz/l20n/js/lib/l20n
+	platform/
+1
+d/home/stas/moz/l20n/js/lib/l20n/platform
+	io.js
+1
+d/home/stas/moz/l20n/js/lib/l20n
+	platform/
+1
+d/home/stas/moz/l20n/js/lib
+	l20n/
+2
+d/home/stas/moz/b2g/gaia
+	apps/
+1
+d/home/stas/moz/b2g/gaia/apps
+	browser/
+2
+d/home/stas/moz/b2g/gaia
+	shared/
+13
+d/home/stas/moz/b2g/gaia/shared
+	js/
+1
+d/home/stas/moz/b2g/gaia/shared/js
+	lazy_l10n.js
+20
+d/home/stas/moz/b2g/gaia/shared
+	js/
+1
+d/home/stas/moz/b2g/gaia
+	shared/
+13
+d/home/stas/moz/b2g/gaia/shared
+	js/
+1
+d/home/stas/moz/b2g/gaia
+	profile/
+12
+d/home/stas/moz/b2g/gaia/profile
+	webapps/
+3
+d/home/stas/moz/b2g/gaia/profile/webapps
+	settings.gaiamobile.org/
+19
+d/home/stas/moz/b2g/gaia/profile/webapps/settings.gaiamobile.org
+	application.zip
+1
+d/home/stas/moz/b2g/gaia
+	profile/
+12
+d/home/stas/moz/b2g/gaia/profile
+	webapps/
+3
+d/home/stas/moz/b2g/gaia/profile/webapps
+	settings.gaiamobile.org/
+19
+d/home/stas/moz/b2g/gaia/profile/webapps/settings.gaiamobile.org
+	application.zip
+1
+d/home/stas/moz/b2g/gaia/profile/webapps
+	settings.gaiamobile.org/
+19
+d/home/stas/moz/b2g/gaia/profile
+	webapps/
+3
+d/home/stas/moz/b2g/gaia
+	apps/
+1
+d/home/stas/moz/b2g/gaia/apps
+	settings/
+19
+d/home/stas/moz/b2g/gaia/apps/settings
+	onpair.html
+12
+d/home/stas/moz/l20n/js
+	lib/
+7
+d/home/stas/moz/l20n/js/lib
+	l20n/
+2
+d/home/stas/moz/l20n/js/lib/l20n
+	context.js
+3
+d/home/stas/moz/l20n/js/lib
+	l20n/
+2
+d/home/stas/moz/l20n/js
+	bindings/
+1
+d/home/stas/moz/l20n/js/bindings
+	l20n/
+1
+d/home/stas/moz/l20n/js/bindings/l20n
+	webl10n.js
+1
+d/home/stas/moz/l20n/js/bindings
+	l20n/
+1
+d/home/stas/moz/l20n/js
+	lib/
+7
+d/home/stas/moz/l20n/js/lib
+	l20n/
+2
+d/home/stas/moz/l20n/js/lib/l20n
+	parser.js
+6
+d/home/stas/moz/l20n/memory
+	lib/
+1
+d/home/stas/moz/b2g/gaia
+	apps/
+1
+d/home/stas/moz/b2g/gaia/apps
+	browser/
+2
+d/home/stas/moz/b2g/gaia/apps/browser
+	locales/
+2
+d/home/stas/moz/b2g/gaia/apps/browser/locales
+	browser.en-US.properties
+2
+d/home/stas/moz/b2g/gaia/apps/browser
+	style/
+4
+d/home/stas/moz/b2g/gaia/apps
+	system/
+21
+d/home/stas/moz/b2g/gaia/apps/system
+	js/
+3
+d/home/stas/moz/b2g/gaia/apps/system/js
+	wrapper.js
+45
+d/home/stas/moz/b2g/gaia/apps/system
+	js/
+3
+d/home/stas/moz/b2g/gaia/apps
+	system/
+21
+d/home/stas/moz/b2g/gaia
+	profile/
+13
+d/home/stas/moz/b2g/gaia/profile
+	webapps/
+3
+d/home/stas/moz/b2g/gaia/profile/webapps
+	system.gaiamobile.org/
+21
+d/home/stas/moz/b2g/gaia/profile/webapps/system.gaiamobile.org
+	application.zip
+1
+d/home/stas/.irclogs/mozilla
+	../
+0
+d/home/stas/.irclogs
+	mozilla/
+4
+d/home/stas/.irclogs/mozilla
+	#affiliates mozilla0213.log
+4
+d/home/stas/moz/b2g/gaia/apps/communications/contacts/locales
+	contacts.fr.properties
+5
+d
+
+# Right window history (oldest to newest):
+D/home/stas/moz/b2g/gaia/profile
+	
+0
+D/home/stas/moz/b2g/gaia/build
+	
+0
+D/home/stas/moz/b2g/gaia/apps/settings
+	
+0
+D/home/stas/moz/l20n/js/dist
+	
+0
+D/home/stas/moz/l20n/js/lib/client/l20n/platform
+	
+0
+D/home/stas/opt/roguelikes/ais523
+	
+0
+D/home/stas/moz/b2g/gaia/shared/js
+	
+0
+D/home/stas/opt/roguelikes/nethacked
+	
+0
+D/home/stas/.irclogs/mozilla
+	
+0
+D/home/stas/.local/share/profanity
+	
+0
+D/home/stas/haywire/EllipticalGradient
+	
+0
+D/srv/B2G
+	
+0
+D/srv/B2G/gonk-misc
+	
+0
+D/home/stas/projects/haywire/server
+	
+0
+D/home/stas/.wine
+	
+0
+D/home/stas/moz/l20n/js/lib/l20n
+	
+0
+D/home/stas/moz/b2g/gaia
+	
+0
+D/home/stas/projects/haywire/public
+	lib/
+3
+D/home/stas/projects/haywire/public/lib
+	game/
+1
+D/home/stas/projects/haywire/public/lib/game
+	entities/
+1
+D/home/stas/projects/haywire/public/lib/game/entities
+	elevator-start.js
+8
+D/home/stas
+	Music/
+5
+D/home/stas/Music
+	../
+0
+D/home/stas
+	projects/
+17
+D/home/stas/projects
+	haywire/
+12
+D/home/stas/projects/haywire
+	serv/
+2
+D/home/stas/projects/haywire/serv
+	../
+0
+D/home/stas/projects/haywire
+	serv/
+2
+D/home/stas/projects/haywire/serv
+	player.js
+3
+D/home/stas/.config/fish/functions
+	
+0
+D/home/stas/projects/haywire/serv
+	
+0
+D/home/stas/moz/l20n/js
+	
+0
+D/home/stas/moz/l20n/js/bindings
+	../
+0
+D/home/stas/moz/l20n/js
+	
+0
+D/home/stas/moz/l20n/js/tests/lib/context
+	
+0
+D/home/stas/projects/haywire
+	public/
+1
+D/home/stas/projects/haywire/public
+	lib/
+3
+D/home/stas/projects/haywire/public/lib
+	game/
+1
+D/home/stas/projects/haywire/public/lib/game
+	entities/
+1
+D/home/stas/projects/haywire/public/lib/game/entities
+	spawnpoint.js
+20
+D/home/stas/projects/haywire/public/lib/game
+	
+0
+D/home/stas/projects/haywire
+	
+0
+D/home/stas/projects/haywire/public/lib
+	
+0
+D/home/stas/projects/haywire/public
+	
+0
+D/home/stas/projects/haywire
+	
+0
+D/home/stas/projects/haywire/server
+	
+0
+D/home/stas/projects/haywire
+	
+0
+D/home/stas/projects/haywiregame.com
+	
+0
+D/home/stas/projects/haywire
+	
+0
+D/home/stas/projects/haywiregame.com
+	
+0
+D/home/stas/src/Craft
+	
+0
+D/home/stas
+	
+0
+D/home/stas/projects/haywire
+	
+0
+D/home/stas/moz/b2g/gaia
+	
+0
+D/home/stas/projects/haywire
+	
+0
+D/home/stas/moz/l20n/js
+	
+0
+D/home/stas/projects/haywire
+	
+0
+D/home/stas/moz/b2g/gaia
+	
+0
+D/home/stas/Downloads/app
+	
+0
+D/home/stas/Downloads/skijump-0.2.0
+	
+0
+D/home/stas/src/c/freeserf
+	
+0
+D/home/stas/src/c/qhack
+	
+0
+D/home/stas
+	
+0
+D/home/stas/src/c/cryptrover
+	
+0
+D/home/stas/projects/haywire/public/lib/game/entities
+	
+0
+D/home/stas/moz/l20n/js
+	
+0
+D/home/stas/moz/b2g/gaia
+	
+0
+D/home/stas/moz/l20n/js
+	
+0
+D/home/stas/moz/l20n/memory
+	
+0
+D/home/stas/moz/b2g/gaia
+	
+0
+D/home/stas/moz/b2g/gaia/apps/system
+	
+0
+D/home/stas/.irclogs/mozilla
+	
+0
+D/home/stas/moz/b2g/gaia/apps/communications/contacts/locales
+	
+0
+D
+
+# Command line history (oldest to newest):
+:Q
+:view
+:k
+:.,.+1q
+:w
+:qal
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+ps
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/stas/.vifm/Trash/000_var
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t000_street02.js
+	/home/stas/projects/haywire/serv/shoemaker/street02.js
+t000_game
+	/home/stas/projects/haywire/serv/game
+t000_;wq
+	/home/stas/projects/haywire/serv/entities/;wq
+t000_index.js
+	/home/stas/projects/haywiregame.com/js/index.js
+t000_jquery-1.10.2.min.js
+	/home/stas/projects/haywiregame.com/js/jquery-1.10.2.min.js
+t000_lightbox-2.6.min.js
+	/home/stas/projects/haywiregame.com/js/lightbox-2.6.min.js
+t000_unslider.min.js
+	/home/stas/projects/haywiregame.com/js/unslider.min.js
+t000_compiler.js.1
+	/home/stas/moz/l20n/js/lib/l20n/compiler.js.1
+t000_extra1.js
+	/home/stas/moz/l20n/js/lib/l20n/extra1.js
+t000_extra2.js
+	/home/stas/moz/l20n/js/lib/l20n/extra2.js
+t000_extra3.js
+	/home/stas/moz/l20n/js/lib/l20n/extra3.js
+t000_extra4.js
+	/home/stas/moz/l20n/js/lib/l20n/extra4.js
+t000_extra5.js
+	/home/stas/moz/l20n/js/lib/l20n/extra5.js
+t000_extra6.js
+	/home/stas/moz/l20n/js/lib/l20n/extra6.js
+t000_extra7.js
+	/home/stas/moz/l20n/js/lib/l20n/extra7.js
+t000_extra8.js
+	/home/stas/moz/l20n/js/lib/l20n/extra8.js
+t000_extra9.js
+	/home/stas/moz/l20n/js/lib/l20n/extra9.js
+t000_extra0.js
+	/home/stas/moz/l20n/js/lib/l20n/extra0.js
+t000_door-open.js
+	/home/stas/projects/haywire/public/lib/game/entities/door-open.js
+t000_boss.js
+	/home/stas/projects/haywire/public/lib/game/entities/boss.js
+t000_tools
+	/home/stas/projects/haywire/public/tools
+t000_setup_master_of_magic_2.0.0.20.exe
+	/home/stas/src/c/setup_master_of_magic_2.0.0.20.exe
+t000_compile.js
+	/home/stas/moz/l20n/js/grunt/config/compile.js
+t000_copy.js
+	/home/stas/moz/l20n/js/grunt/config/copy.js
+t000_docco.js
+	/home/stas/moz/l20n/js/grunt/config/docco.js
+t000_jscoverage.js
+	/home/stas/moz/l20n/js/grunt/config/jscoverage.js
+t000_mocha-test.js
+	/home/stas/moz/l20n/js/grunt/config/mocha-test.js
+t000_tasks
+	/home/stas/moz/l20n/js/grunt/tasks
+t000_var
+	/home/stas/moz/l20n/js/grunt/var
+t000_built.js
+	/home/stas/moz/l20n/js/dist/built.js
+t000_ar.data
+	/home/stas/moz/b2g/gaia/apps/settings/locales-obj/ar.data
+t000_en-US.data
+	/home/stas/moz/b2g/gaia/apps/settings/locales-obj/en-US.data
+t000_fr.data
+	/home/stas/moz/b2g/gaia/apps/settings/locales-obj/fr.data
+t000_zh-TW.data
+	/home/stas/moz/b2g/gaia/apps/settings/locales-obj/zh-TW.data
+t001_ar.data
+	/home/stas/moz/b2g/gaia/apps/communications/locales-obj/ar.data
+t001_en-US.data
+	/home/stas/moz/b2g/gaia/apps/communications/locales-obj/en-US.data
+t001_fr.data
+	/home/stas/moz/b2g/gaia/apps/communications/locales-obj/fr.data
+t001_zh-TW.data
+	/home/stas/moz/b2g/gaia/apps/communications/locales-obj/zh-TW.data
+
+# State:
+f
+i1
+[.1
+[F
+F
+I1
+].1
+]F
+s0
