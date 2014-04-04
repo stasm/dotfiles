@@ -9,7 +9,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'ap/vim-css-color'
 Bundle 'scrooloose/nerdtree'
 Bundle 'flazz/vim-colorschemes'
@@ -38,8 +39,23 @@ set t_Co=256 " 256 colors
 "set t_AF=^[[38;5;%dm
 syntax on
 set background=dark
-colorscheme fruidle256
+colorscheme fruidle
+highlight clear SignColumn
+
+" airline
 set laststatus=2 " Always show the statusline
+let g:airline_theme             = 'powerlineish'
+let g:airline_enable_branch     = 1
+let g:airline_enable_syntastic  = 1
+let g:airline_left_sep          = ''
+let g:airline_left_alt_sep      = ''
+let g:airline_right_sep         = ''
+let g:airline_right_alt_sep     = ''
+let g:airline_branch_prefix     = 'BR'
+let g:airline_readonly_symbol   = 'RO'
+let g:airline_linecolumn_prefix = 'LN'
+let g:airline_detect_paste=1
+
 if has("gui_running")
     set guifont=Inconsolata\ 10
     set go-=T
@@ -49,16 +65,8 @@ if has("gui_running")
     colorscheme wombat
 endif
 
+set numberwidth=3
 set hidden
-set relativenumber
-au BufEnter * :set relativenumber
-au BufLeave * :set number
-au WinEnter * :set relativenumber
-au WinLeave * :set number
-au InsertEnter * :set number
-au InsertLeave * :set relativenumber
-au FocusLost * :set number
-au FocusGained * :set relativenumber
 set splitbelow splitright
 set cursorline
 set showcmd
