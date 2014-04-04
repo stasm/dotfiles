@@ -1,0 +1,14 @@
+[ui]
+username = Staś Małolepszy <stas@mozilla.com>
+
+[defaults]
+qnew = -Ue
+
+[extensions]
+mq =
+graphlog =
+
+[diff]
+git = 1
+showfunc = 1
+unified = 8
