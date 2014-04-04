@@ -1,0 +1,24 @@
+#!/bin/sh
+lock() {
+    i3lock -c ff0066
+}
+
+case "$1" in
+    lock)
+        lock
+        ;;
+    logout)
+        i3-msg exit
+        ;;
+    suspend)
+        lock && sudo pm-suspend
+        ;;
+    hibernate)
+        lock && sudo pm-hibernate
+        ;;
+    *)
+        echo "Usage: $0 {lock|logout|suspend|hibernate}"
+        exit 2
+esac
+
+exit 0

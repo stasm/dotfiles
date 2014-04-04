@@ -24,7 +24,7 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # go to the last visited workspace
 bindsym Mod1+Tab workspace back_and_forth
 bindsym Mod4+Tab workspace back_and_forth
-workspace_auto_back_and_forth yes
+workspace_auto_back_and_forth no
 
 # change focus
 bindsym $mod+h focus left
@@ -89,9 +89,9 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # pulse audio volume control
-bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 0 -- '-5%'
-bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 0 -- '+5%'
-bindsym XF86AudioMute exec /usr/bin/pactl set-sink-volume 0 0
+bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%+ unmute
+bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master %5- unmute
+bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86Launch1 exec /usr/bin/killall plugin-container
 bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
@@ -134,20 +134,18 @@ bindsym $mod+Ctrl+j           resize grow height 10 px or 10 ppt
 bindsym $mod+Ctrl+k           resize shrink height 10 px or 10 ppt
 bindsym $mod+Ctrl+l           resize grow width 10 px or 10 ppt
 
-set $mode_system [l]ock, log[o]ut, [s]uspend, [h]ibernate, [r]eboot, [S]hutdown
+set $mode_system [l]ock, log[o]ut, [s]uspend, [h]ibernate
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"  
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Pause mode "$mode_system"
+bindsym $mod+x mode "$mode_system"
 
 # Toggle border style
 bindsym $mod+b border toggle
