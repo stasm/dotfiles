@@ -4,7 +4,6 @@ chatnets = {
     nick = "stas";
     autosendcmd = "/script exec $ENV{'TZ'}='CET'";
   };
-  bitlbee = { type = "IRC"; };
   freenode = {
     type = "IRC";
     nick = "sta";
@@ -20,12 +19,6 @@ servers = (
     port = "6697";
     use_ssl = "yes";
     ssl_verify = "no";
-    autoconnect = "yes";
-  },
-  {
-    address = "localhost";
-    chatnet = "bitlbee";
-    port = "6667";
     autoconnect = "yes";
   },
   {
@@ -63,9 +56,7 @@ channels = (
   { name = "#games"; chatnet = "mozilla"; autojoin = "Yes"; },
   { name = "#verbatim"; chatnet = "mozilla"; autojoin = "Yes"; },
   { name = "#mozillians"; chatnet = "mozilla"; autojoin = "Yes"; },
-  { name = "#elmo"; chatnet = "mozilla"; autojoin = "Yes"; },
-
-  { name = "&bitlbee"; chatnet = "bitlbee"; autojoin = "Yes"; }
+  { name = "#elmo"; chatnet = "mozilla"; autojoin = "Yes"; }
 );
 
 aliases = {
@@ -421,31 +412,9 @@ windows = {
       }
     );
   };
-  8 = { name = "(null)"; };
-  9 = {
-    name = "(im)";
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "&bitlbee";
-        tag = "bitlbee";
-        botcmd = "identify 1q";
-      }
-    );
-  };
+  8 = { name = "(foo)"; };
+  9 = { name = "(bar)"; };
   10 = { name = "(hilight)"; sticky = "yes"; };
-
-  11 = {
-    items = (
-      {
-        type = "QUERY";
-        chat_type = "IRC";
-        name = "zosia";
-        tag = "bitlbee";
-      }
-    );
-  };
 };
 mainwindows = {
   3 = { first_line = "3"; lines = "30"; };
