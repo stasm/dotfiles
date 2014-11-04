@@ -7,8 +7,15 @@ qnew = -Ue
 [extensions]
 mq =
 graphlog =
+pager =
 
 [diff]
 git = 1
 showfunc = 1
 unified = 8
+
+[pager]
+pager = LESS='FRX' less
+
+[alias]
+shortlog = log --template '{node|short} | {date|isodatesec} | {author|user}: {desc|strip|firstline}\n'
