@@ -41,7 +41,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git history pass ssh-agent tmux torrent z command-not-found)
+plugins=(git history pass tmux torrent z command-not-found)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -63,3 +63,9 @@ export TERM=xterm-256color
 # Aliases
 alias v="vim"
 alias h="vifm . ."
+alias cal="ncal -MC3"
+alias please='sudo $(history -p !!)'
+alias install='sudo apt-get install'
+alias upupup="sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade"
+
+setxkbmap -layout pl -option ctrl:nocaps -option compose:rctrl -option terminate:ctrl_alt_bksp
