@@ -36,6 +36,9 @@
     llll = log --graph --decorate --abbrev-commit --all
     changelog = log --pretty=format:'%s'
     ls = ls-files
+
+[diff]
+    context = 8
 [push]
 	default = simple
 [giggle]
