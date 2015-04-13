@@ -1,31 +1,40 @@
 set nocompatible
 filetype off
-set shell=bash
 let mapleader=" "
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'bling/vim-airline'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'ap/vim-css-color'
-Bundle 'scrooloose/nerdtree'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'CSApprox'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'justinmk/vim-sneak'
+Plugin 'FredKSchott/CoVim'
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-vinegar'
+Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'ap/vim-css-color'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'CSApprox'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'justinmk/vim-sneak'
+Plugin 'rking/ag.vim'
+Plugin 'ludovicchabant/vim-gutentags'
+
+Plugin 'tpope/vim-markdown'
+Plugin 'junegunn/goyo.vim'
 
 " JavaScript-specific 
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'pangloss/vim-javascript'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'vim-scripts/JavaScript-Indent'
-Bundle 'scrooloose/syntastic'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'vim-scripts/JavaScript-Indent'
+Plugin 'scrooloose/syntastic'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'Valloric/YouCompleteMe'
+"Plugin 'bigfish/vim-js-context-coloring'
+
+call vundle#end()
 
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
@@ -33,6 +42,7 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 
 " UI
+set shell=bash
 set term=screen-256color
 set t_Co=256 " 256 colors
 "set t_AB=^[[48;5;%dm
@@ -53,8 +63,18 @@ let g:airline_right_sep         = ''
 let g:airline_right_alt_sep     = ''
 let g:airline_branch_prefix     = 'BR'
 let g:airline_readonly_symbol   = 'RO'
-let g:airline_linecolumn_prefix = 'LN'
+let g:airline_linecolumn_prefix = ''
 let g:airline_detect_paste=1
+
+let g:airline_section_b = ''    " (hunks, branch)
+let g:airline_section_x = ''    " (tagbar, filetype, virtualenv)
+let g:airline_section_y = ''    " (fileencoding, fileformat)
+
+" netrw
+let g:netrw_preview = 1
+
+"goyo
+nnoremap <Leader>g :Goyo<CR>  
 
 if has("gui_running")
     set guifont=Inconsolata\ 10
@@ -74,10 +94,6 @@ set ruler
 set textwidth=79
 set formatoptions=cqrnw1
 set colorcolumn=+1
-" Highlight text in 75th-79th columns and after 79th column in Python
-au BufWinEnter *.py let w:m1=matchadd('Search', '\%<80v.\%>75v', -1)
-au BufWinEnter *.py let w:m2=matchadd('ErrorMsg', '\%>79v.\+', -1)
-"au BufWinEnter *.js let w:m2=matchadd('Search', '\%>79v.\+', -1)
 
 " Searching
 set incsearch
@@ -91,14 +107,11 @@ set gdefault
 nnoremap <leader><space> :nohlsearch<cr>
 nnoremap <tab> %
 vnoremap <tab> %
+nmap & :Ag <c-r>=expand("<cword>")<cr><cr>
 
 
 " Invisible characters
-if has("gui_running")
-    set listchars=trail:⋅,tab:▸\ ,eol:¬
-else
-    set listchars=trail:.,tab:>-,eol:$
-endif
+set listchars=trail:⋅,tab:▸\ ,eol:¬
 set nolist
 noremap <leader>i :set list!<CR>
 " Toggle invisible chars
@@ -110,27 +123,29 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set nosmartindent
+set breakindent
+set showbreak=↪\ 
+set breakindentopt=sbr,shift:2
 
 " Mappings ********************************************************************
 
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>w :w<CR>
 nnoremap <Leader>v :vsplit<CR>
 nnoremap <Leader>s :split<CR>
-nnoremap <Leader>p :CtrlP<CR>
-nnoremap <Leader>g :vimgrep
 nnoremap <Leader>c :copen<CR>
 nnoremap <Leader>C :cclose<CR>
 nnoremap <Leader>8 :set tw=80<CR>
 nnoremap <Leader>0 :set tw=0<CR>
 nnoremap <Leader>n :set invnumber<CR>
-nnoremap <Leader>h :bp<CR>
-nnoremap <Leader>l :bn<CR>
+nnoremap <Leader>z :set invpaste<CR>
 
 nnoremap <Leader>, 2<C-w><
 nnoremap <Leader>. 2<C-w>>
 nnoremap <Leader>- 2<C-w>-
 nnoremap <Leader>= 2<C-w>+
+
+" apply macros with Q
+nnoremap Q @q
+vnoremap Q :norm @q<cr>
  
 " easier commands
 nnoremap ; :
@@ -141,10 +156,11 @@ nnoremap j gj
 nnoremap k gk
 
 " buffer management
-map <F8> :bn<CR>
-map <C-E> :CommandT<CR>
-map <C-F> :CommandTBuffer<CR>
-map <C-A> :NERDTreeToggle<CR>
+map <C-P> :CtrlP<CR>
+map <C-E> :CtrlPBuffer<CR>
+
+nnoremap <S-H> :bp<CR>
+nnoremap <S-L> :bn<CR>
 
 " don't open help
 inoremap <F1> <ESC>
@@ -157,10 +173,6 @@ inoremap <C-L> <Tab>
 "imap <Tab> <C-P>
 
 imap jj <Esc>
-map <F6>  :w<CR>
-
-" Highlight text after 79th column
-nnoremap <F10> :match ErrorMsg '\%>79v.\+'<CR>
 
 " select lines that were just pasted
 nnoremap <leader><TAB> V`]
@@ -221,19 +233,6 @@ function! Toggle_text_editing()
 endfunction
 nnoremap <leader>t :call Toggle_text_editing()<CR>
 
-let s:dark_theme = 1
-function! Toggle_theme()
-    if s:dark_theme
-        let s:dark_theme = 0
-        colorscheme fruidle256
-    else
-        let s:dark_theme = 1
-        colorscheme wombat
-    endif
-    return
-endfunction
-nnoremap <leader>] :call Toggle_theme()<CR>
-
 " Crontab doesn't like the way Vim does backups *******************************
 if $VIM_CRONTAB == "true"
     set nobackup
@@ -244,6 +243,7 @@ endif
 au BufRead alot.* set ft=mail
 au BufRead alot.* call Toggle_text_editing()
 au BufRead *.md set ft=markdown ai
+au BufRead *.wisp set ft=clojure
 au FileType javascript setl ts=2 et sts=2 sw=2
 au BufWinLeave *.js mkview
 au BufWinEnter *.js silent loadview
