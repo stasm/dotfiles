@@ -92,16 +92,22 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%+ unmute
 bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master %5- unmute
 bindsym XF86AudioMute exec amixer set Master toggle
-bindsym XF86Launch1 exec /usr/bin/killall plugin-container
-bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
+#bindsym XF86AudioMicMute
+bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 20
+bindsym Shift+XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 5
+bindsym Shift+XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
+
+bindsym XF86Search exec firefox -private-window
+bindsym XF86Tools exec /home/stas/dotfiles/xbindkeys/bin/trackpad-toggle.sh
+bindsym XF86LaunchA exec /usr/bin/killall plugin-container
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+z border pixel 10, move scratchpad
-#
 # Show the first scratchpad window
 bindsym $mod+z scratchpad show, move position 0px 20px
 bindsym F12 scratchpad show, move position 0px 20px
+bindsym XF86MyComputer scratchpad show, move position 0px 20px
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
