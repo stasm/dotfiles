@@ -183,7 +183,8 @@ bar {
     }
 }
 
-exec --no-startup-id feh --bg-scale /home/stas/Pictures/wallpapers/cpu/PL2303HX-HD.jpg
+exec --no-startup-id feh --bg-scale /home/stas/Pictures/wallpapers/apollo.png
+
 exec --no-startup-id xset dpms 600
 exec --no-startup-id setxkbmap -layout pl -option ctrl:nocaps -option -option compose:rctrl -option terminate:ctrl_alt_bksp
 
@@ -195,6 +196,7 @@ exec --no-startup-id /usr/bin/owncloud
 
 workspace 9 output eDP1
 
+for_window [class="Firefox"] border none
 for_window [class="Arandr"] floating enable, border normal
 for_window [title="^Mozilla Persona"] floating enable, border normal
 for_window [class="SWT"] floating enable, border normal
