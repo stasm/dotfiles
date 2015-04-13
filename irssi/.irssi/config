@@ -41,22 +41,13 @@ channels = (
   { name = "#l20n"; chatnet = "mozilla"; autojoin = "Yes"; },
 
   { name = "#gaia"; chatnet = "mozilla"; autojoin = "Yes"; },
-  { name = "#b2g"; chatnet = "mozilla"; autojoin = "Yes"; },
 
   { name = "#l10n"; chatnet = "mozilla"; autojoin = "Yes"; },
-  { name = "#mozcamp"; chatnet = "mozilla"; autojoin = "Yes"; },
-  { name = "#europe"; chatnet = "mozilla"; autojoin = "Yes"; },
 
   { name = "#aviarypl"; chatnet = "mozilla"; autojoin = "Yes"; },
-  { name = "#mozillapl"; chatnet = "mozilla"; autojoin = "Yes"; },
-  { name = "#mozilla.pl"; chatnet = "mozilla"; autojoin = "Yes"; },
 
   { name = "#swag"; chatnet = "mozilla"; autojoin = "Yes"; },
-  { name = "#airmozilla"; chatnet = "mozilla"; autojoin = "Yes"; },
-  { name = "#games"; chatnet = "mozilla"; autojoin = "Yes"; },
-  { name = "#verbatim"; chatnet = "mozilla"; autojoin = "Yes"; },
-  { name = "#mozillians"; chatnet = "mozilla"; autojoin = "Yes"; },
-  { name = "#elmo"; chatnet = "mozilla"; autojoin = "Yes"; }
+  { name = "#airmozilla"; chatnet = "mozilla"; autojoin = "Yes"; }
 );
 
 aliases = {
@@ -217,13 +208,6 @@ statusbar = {
         barend = { priority = "100"; alignment = "right"; };
       };
     };
-    awl_1 = {
-      items = {
-        barstart = { priority = "100"; };
-        awl_1 = { };
-        barend = { priority = "100"; alignment = "right"; };
-      };
-    };
   };
 };
 settings = {
@@ -303,18 +287,12 @@ windows = {
     );
   };
   4 = {
-    name = "b2g";
+    name = "gaia";
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#gaia";
-        tag = "mozilla";
-      },
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#b2g";
         tag = "mozilla";
       }
     );
@@ -327,18 +305,6 @@ windows = {
         chat_type = "IRC";
         name = "#l10n";
         tag = "mozilla";
-      },
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#europe";
-        tag = "mozilla";
-      },
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#mozcamp";
-        tag = "mozilla";
       }
     );
   };
@@ -349,18 +315,6 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#aviarypl";
-        tag = "mozilla";
-      },
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#mozillapl";
-        tag = "mozilla";
-      },
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#mozilla.pl";
         tag = "mozilla";
       }
     );
@@ -378,36 +332,6 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#airmozilla";
-        tag = "mozilla";
-      },
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#games";
-        tag = "mozilla";
-      },
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#verbatim";
-        tag = "mozilla";
-      },
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#mobile";
-        tag = "mozilla";
-      },
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#mozillians";
-        tag = "mozilla";
-      },
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#elmo";
         tag = "mozilla";
       }
     );
