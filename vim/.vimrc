@@ -223,31 +223,6 @@ set backspace=indent,eol,start
 set matchpairs+=<:>
 set clipboard+=unnamed
 
-" Functions *******************************************************************
-"
-let s:editing_text = 0
-function! Toggle_text_editing()
-    if s:editing_text
-        " turn off text editing
-        let s:editing_text = 0
-        setlocal formatoptions-=ta
-        setlocal relativenumber
-        setlocal autoindent
-        setlocal textwidth=79
-        setlocal colorcolumn=80
-    else
-        " turn on text editing
-        let s:editing_text = 1
-        setlocal formatoptions+=ta
-        setlocal norelativenumber
-        setlocal autoindent
-        setlocal textwidth=71
-        setlocal colorcolumn=72
-    endif
-    return
-endfunction
-nnoremap <leader>t :call Toggle_text_editing()<CR>
-
 " Crontab doesn't like the way Vim does backups *******************************
 if $VIM_CRONTAB == "true"
     set nobackup
@@ -255,19 +230,9 @@ if $VIM_CRONTAB == "true"
 endif
 
 " Filetype-specific ***********************************************************
-au BufRead alot.* set ft=mail
-au BufRead alot.* call Toggle_text_editing()
 au BufRead *.md set ft=markdown ai
 au BufRead *.wisp set ft=clojure
 au FileType javascript setl ts=2 et sts=2 sw=2
 au BufWinLeave *.js mkview
 au BufWinEnter *.js silent loadview
 au FileType html setl ts=2 et sts=2 sw=2
-
-let g:task_paper_date_format = "%b %d"
-
-" Now process all of the configuration files that I have stored in my 'config'
-" directory, which significantly cleans up this file.
-" for filename in sort(split(glob('~/.vim/config/*.vim'), '\n'))
-"     execute 'source '.filename
-" endfor
