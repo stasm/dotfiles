@@ -5,34 +5,43 @@ let mapleader=" "
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
-Plugin 'FredKSchott/CoVim'
-
 Plugin 'gmarik/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
+
+"ui
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-vinegar'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'ap/vim-css-color'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'CSApprox'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'justinmk/vim-sneak'
+Plugin 'nathanaelkane/vim-indent-guides'
+
+"motions
 Plugin 'rking/ag.vim'
-Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'unblevable/quick-scope'
+Plugin 'vasconcelloslf/vim-interestingwords'
+Plugin 'wellle/targets.vim'
+
+Plugin 'ap/vim-css-color'
+"Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'tpope/vim-obsession'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-jdaddy'
 
 Plugin 'tpope/vim-markdown'
 Plugin 'junegunn/goyo.vim'
+Plugin 'lambdatoast/elm.vim'
 
 " JavaScript-specific 
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'vim-scripts/JavaScript-Indent'
 Plugin 'scrooloose/syntastic'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
-"Plugin 'bigfish/vim-js-context-coloring'
+Plugin 'bigfish/vim-js-context-coloring'
 
 call vundle#end()
 
@@ -40,6 +49,48 @@ set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
+
+" airline
+set laststatus=2 " Always show the statusline
+let g:airline_theme             = 'powerlineish'
+let g:airline_left_sep          = ''
+let g:airline_left_alt_sep      = ''
+let g:airline_right_sep         = ''
+let g:airline_right_alt_sep     = ''
+
+let g:airline_detect_paste=1
+
+let g:airline_section_b = ''    " (hunks, branch)
+let g:airline_section_x = ''    " (tagbar, filetype, virtualenv)
+let g:airline_section_y = ''    " (fileencoding, fileformat)
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.branch = 'BR'
+let g:airline_symbols.readonly = 'RO'
+let g:airline_symbols.linenr = ''
+
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+
+" netrw
+let g:netrw_preview = 1
+
+"goyo
+nnoremap <Leader>g :Goyo 72<CR>  
+
+"interesting words
+nnoremap <silent> <leader>k :call InterestingWords('n')<cr>
+nnoremap <silent> <leader>K :call UncolorAllWords()<cr>
+
+nnoremap <silent> n :call WordNavigation('forward')<cr>
+nnoremap <silent> N :call WordNavigation('backward')<cr>
+
+let g:interestingWordsGUIColors = ['#8CCBEA', '#A4E57E', '#FFDB72', '#FF7272', '#FFB3FF', '#9999FF']
+let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
+let g:interestingWordsRandomiseColors = 1
 
 " UI
 set shell=bash
@@ -49,40 +100,16 @@ set t_Co=256 " 256 colors
 "set t_AF=^[[38;5;%dm
 syntax on
 set background=dark
-colorscheme fruidle
+colorscheme fruidle256
 highlight clear SignColumn
-
-" airline
-set laststatus=2 " Always show the statusline
-let g:airline_theme             = 'powerlineish'
-let g:airline_enable_branch     = 1
-let g:airline_enable_syntastic  = 1
-let g:airline_left_sep          = ''
-let g:airline_left_alt_sep      = ''
-let g:airline_right_sep         = ''
-let g:airline_right_alt_sep     = ''
-let g:airline_branch_prefix     = 'BR'
-let g:airline_readonly_symbol   = 'RO'
-let g:airline_linecolumn_prefix = ''
-let g:airline_detect_paste=1
-
-let g:airline_section_b = ''    " (hunks, branch)
-let g:airline_section_x = ''    " (tagbar, filetype, virtualenv)
-let g:airline_section_y = ''    " (fileencoding, fileformat)
-
-" netrw
-let g:netrw_preview = 1
-
-"goyo
-nnoremap <Leader>g :Goyo<CR>  
 
 if has("gui_running")
     set guifont=Inconsolata\ 10
-    set go-=T
-    set go-=r
-    set go-=rlRL
+    set guioptions-=m  "remove menu bar
+    set guioptions-=T  "remove toolbar
+    set guioptions-=r  "remove right-hand scroll bar
+    set guioptions-=L  "remove left-hand scroll bar
     "set fuoptions=background:Normal
-    colorscheme wombat
 endif
 
 set numberwidth=3
@@ -146,9 +173,6 @@ nnoremap <Leader>= 2<C-w>+
 " apply macros with Q
 nnoremap Q @q
 vnoremap Q :norm @q<cr>
- 
-" easier commands
-nnoremap ; :
 
 " moving around
 " map <C-H> <C-w>h at al. are set by vim-tmux-navigator
@@ -211,23 +235,14 @@ function! Toggle_text_editing()
         setlocal autoindent
         setlocal textwidth=79
         setlocal colorcolumn=80
-        if has("gui_running")
-            colorscheme wombat
-        else
-            colorscheme wombat256
-        endif
     else
         " turn on text editing
         let s:editing_text = 1
         setlocal formatoptions+=ta
         setlocal norelativenumber
+        setlocal autoindent
         setlocal textwidth=71
         setlocal colorcolumn=72
-        if has("gui_running")
-            colorscheme fruidle
-        else
-            colorscheme fruidle256
-        endif
     endif
     return
 endfunction
