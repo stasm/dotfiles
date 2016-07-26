@@ -18,8 +18,11 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
+# https://github.com/enkore/j4-dmenu-desktop is a faster version of 
+# i3-dmenu-desktop which looks for .desktop files
 bindsym $mod+Shift+d exec dmenu_run
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -i -dmenu -p ""'
+bindsym $mod+a exec --no-startup-id rofi -i -show window
 
 # go to the last visited workspace
 bindsym Mod1+Tab workspace back_and_forth
