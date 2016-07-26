@@ -193,11 +193,8 @@ exec --no-startup-id feh --bg-scale /home/stas/Pictures/wallpapers/apollo.png
 exec --no-startup-id xset dpms 600
 exec --no-startup-id setxkbmap -layout pl -option ctrl:nocaps -option -option compose:rctrl -option terminate:ctrl_alt_bksp
 
-exec --no-startup-id indicator-multiload
 exec --no-startup-id indicator-cpufreq
 exec --no-startup-id /usr/bin/nm-applet
-exec --no-startup-id /usr/bin/btsync-gui
-exec --no-startup-id /usr/bin/owncloud
 
 workspace 9 output eDP1
 
