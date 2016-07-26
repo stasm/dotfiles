@@ -200,6 +200,8 @@ workspace 9 output eDP1
 
 for_window [class="Firefox"] border none
 for_window [class="Arandr"] floating enable, border normal
+for_window [class="Pavucontrol"] floating enable, border normal
 for_window [title="^Mozilla Persona"] floating enable, border normal
 for_window [class="SWT"] floating enable, border normal
-
+for_window [class="VidyoDesktop"] floating enable, border none
+for_window [class="Simplescreenrecorder"] floating enable, border normal
