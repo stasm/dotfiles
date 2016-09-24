@@ -24,24 +24,33 @@ Plugin 'unblevable/quick-scope'
 Plugin 'vasconcelloslf/vim-interestingwords'
 Plugin 'wellle/targets.vim'
 
+Plugin 'kana/vim-textobj-user'
+Plugin 'whatyouhide/vim-textobj-xmlattr'
+
 Plugin 'ap/vim-css-color'
 "Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/vim-obsession'
-Plugin 'tpope/vim-commentary'
+Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-jdaddy'
 
 Plugin 'tpope/vim-markdown'
 Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
+Plugin 'reedes/vim-pencil'
 Plugin 'lambdatoast/elm.vim'
 
 " JavaScript-specific 
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'mxw/vim-jsx'
 Plugin 'vim-scripts/JavaScript-Indent'
 Plugin 'scrooloose/syntastic'
+Plugin 'moll/vim-node'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'bigfish/vim-js-context-coloring'
+
+Plugin 'metakirby5/codi.vim'
 
 call vundle#end()
 
@@ -51,7 +60,6 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 
 " airline
-set laststatus=2 " Always show the statusline
 let g:airline_theme             = 'powerlineish'
 let g:airline_left_sep          = ''
 let g:airline_left_alt_sep      = ''
@@ -80,6 +88,38 @@ let g:netrw_preview = 1
 
 "goyo
 nnoremap <Leader>g :Goyo 72<CR>  
+function! s:goyo_enter()
+  SoftPencil
+  Limelight 0.8
+  silent !tmux set status off
+  silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  set nocursorline
+  set textwidth=71
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  set showbreak=
+  "set formatoptions=tanq1
+  set com=fb:-
+endfunction
+
+function! s:goyo_leave()
+  NoPencil
+  Limelight!
+  silent !tmux set status on
+  silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  set cursorline
+  set textwidth=79
+  set showmode
+  set showcmd
+  set scrolloff=0
+  set showbreak=↪\ 
+  "set formatoptions=crnwq1
+  set com=:--
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 "interesting words
 nnoremap <silent> <leader>k :call InterestingWords('n')<cr>
@@ -89,8 +129,11 @@ nnoremap <silent> n :call WordNavigation('forward')<cr>
 nnoremap <silent> N :call WordNavigation('backward')<cr>
 
 let g:interestingWordsGUIColors = ['#8CCBEA', '#A4E57E', '#FFDB72', '#FF7272', '#FFB3FF', '#9999FF']
-let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
+let g:interestingWordsTermColors = ['219', '81', '121', '154', '211', '214']
 let g:interestingWordsRandomiseColors = 1
+
+"quick scope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " UI
 set shell=bash
@@ -117,10 +160,13 @@ set hidden
 set splitbelow splitright
 set cursorline
 set showcmd
+set laststatus=1
 set ruler
 set textwidth=79
-set formatoptions=cqrnw1
-set colorcolumn=+1
+set autoindent
+set formatoptions=crnwq1
+set colorcolumn=0
+set fdm=marker
 
 " Searching
 set incsearch
@@ -131,7 +177,7 @@ set smartcase " Ignore case when searching lowercase
 nnoremap / /\v
 vnoremap / /\v
 set gdefault
-nnoremap <leader><space> :nohlsearch<cr>
+nnoremap <leader>l :nohlsearch<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 nmap & :Ag <c-r>=expand("<cword>")<cr><cr>
@@ -152,27 +198,17 @@ set expandtab
 set nosmartindent
 set breakindent
 set showbreak=↪\ 
-set breakindentopt=sbr,shift:2
+set cpoptions+=n
+set breakindentopt=min:20,sbr,shift:0
+set autoread
 
 " Mappings ********************************************************************
 
-nnoremap <Leader>v :vsplit<CR>
-nnoremap <Leader>s :split<CR>
-nnoremap <Leader>c :copen<CR>
-nnoremap <Leader>C :cclose<CR>
-nnoremap <Leader>8 :set tw=80<CR>
-nnoremap <Leader>0 :set tw=0<CR>
+nnoremap <Leader>8 :set colorcolumn=+1<CR>
+nnoremap <Leader>0 :set colorcolumn=0<CR>
 nnoremap <Leader>n :set invnumber<CR>
-nnoremap <Leader>z :set invpaste<CR>
-
-nnoremap <Leader>, 2<C-w><
-nnoremap <Leader>. 2<C-w>>
-nnoremap <Leader>- 2<C-w>-
-nnoremap <Leader>= 2<C-w>+
-
-" apply macros with Q
-nnoremap Q @q
-vnoremap Q :norm @q<cr>
+nnoremap <Leader>p :set invpaste<CR>
+nnoremap <leader><space> za
 
 " moving around
 " map <C-H> <C-w>h at al. are set by vim-tmux-navigator
@@ -193,7 +229,6 @@ vnoremap <F1> <ESC>
 
 " autocomplete
 "set omnifunc=youcompleteme#OmniComplete
-inoremap <C-L> <Tab>
 "imap <Tab> <C-P>
 
 imap jj <Esc>
@@ -232,7 +267,7 @@ endif
 " Filetype-specific ***********************************************************
 au BufRead *.md set ft=markdown ai
 au BufRead *.wisp set ft=clojure
-au FileType javascript setl ts=2 et sts=2 sw=2
+au FileType javascript setl ts=2 et sts=2 sw=2 commentstring=\/\/\ %s
 au BufWinLeave *.js mkview
 au BufWinEnter *.js silent loadview
 au FileType html setl ts=2 et sts=2 sw=2
