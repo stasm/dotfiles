@@ -198,10 +198,17 @@ exec --no-startup-id /usr/bin/nm-applet
 
 workspace 9 output eDP1
 
-for_window [class="Firefox"] border none
+# for_window [class="Firefox"] border none
 for_window [class="Arandr"] floating enable, border normal
 for_window [class="Pavucontrol"] floating enable, border normal
 for_window [title="^Mozilla Persona"] floating enable, border normal
 for_window [class="SWT"] floating enable, border normal
 for_window [class="VidyoDesktop"] floating enable, border none
 for_window [class="Simplescreenrecorder"] floating enable, border normal
+for_window [class="Toggl Desktop"] floating enable, border normal
+
+for_window [ class="Firefox" instance="Browser" window_role="About"] floating enable, border normal
+# for_window [ instance="Browser" window_role="About"] floating enable, border normal, move position cetner, resize set 712px 328px
+# for_window [ instance="Toplevel"] floating enable, border normal, move position center, resize set 712px 328px
+# for_window [ instance="Navigator" ] floating enable, border normal, move position center, resize set 1280px 720px
+# for_window [ class="Gnome-terminal" ] floating enable, border pixel, move position center
