@@ -9,18 +9,12 @@ Plugin 'gmarik/Vundle.vim'
 
 "ui
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-vinegar'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'nathanaelkane/vim-indent-guides'
 
 "motions
 Plugin 'rking/ag.vim'
-Plugin 'unblevable/quick-scope'
+Plugin 'rhysd/clever-f.vim'
 Plugin 'vasconcelloslf/vim-interestingwords'
 Plugin 'wellle/targets.vim'
 
@@ -28,16 +22,12 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'whatyouhide/vim-textobj-xmlattr'
 
 Plugin 'ap/vim-css-color'
-"Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/vim-obsession'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-jdaddy'
 
-Plugin 'tpope/vim-markdown'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'reedes/vim-pencil'
-Plugin 'lambdatoast/elm.vim'
 
 " JavaScript-specific 
 Plugin 'pangloss/vim-javascript'
@@ -48,9 +38,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'moll/vim-node'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'bigfish/vim-js-context-coloring'
-
-Plugin 'metakirby5/codi.vim'
 
 call vundle#end()
 
@@ -58,30 +45,6 @@ set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
-
-" airline
-let g:airline_theme             = 'powerlineish'
-let g:airline_left_sep          = ''
-let g:airline_left_alt_sep      = ''
-let g:airline_right_sep         = ''
-let g:airline_right_alt_sep     = ''
-
-let g:airline_detect_paste=1
-
-let g:airline_section_b = ''    " (hunks, branch)
-let g:airline_section_x = ''    " (tagbar, filetype, virtualenv)
-let g:airline_section_y = ''    " (fileencoding, fileformat)
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-let g:airline_symbols.branch = 'BR'
-let g:airline_symbols.readonly = 'RO'
-let g:airline_symbols.linenr = ''
-
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions#branch#enabled = 1
 
 " netrw
 let g:netrw_preview = 1
@@ -131,9 +94,6 @@ nnoremap <silent> N :call WordNavigation('backward')<cr>
 let g:interestingWordsGUIColors = ['#8CCBEA', '#A4E57E', '#FFDB72', '#FF7272', '#FFB3FF', '#9999FF']
 let g:interestingWordsTermColors = ['219', '81', '121', '154', '211', '214']
 let g:interestingWordsRandomiseColors = 1
-
-"quick scope
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " UI
 set shell=bash
