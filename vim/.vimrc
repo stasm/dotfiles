@@ -102,8 +102,8 @@ set t_Co=256 " 256 colors
 "set t_AB=^[[48;5;%dm
 "set t_AF=^[[38;5;%dm
 syntax on
-set background=dark
-colorscheme fruidle256
+set background=light
+colorscheme soda
 highlight clear SignColumn
 
 if has("gui_running")
@@ -120,7 +120,7 @@ set hidden
 set splitbelow splitright
 set cursorline
 set showcmd
-set laststatus=1
+set laststatus=2
 set ruler
 set textwidth=79
 set autoindent
