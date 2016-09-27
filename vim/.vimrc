@@ -25,10 +25,6 @@ Plugin 'ap/vim-css-color'
 Plugin 'tpope/vim-obsession'
 Plugin 'tomtom/tcomment_vim'
 
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
-Plugin 'reedes/vim-pencil'
-
 " JavaScript-specific 
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
@@ -48,41 +44,6 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 
 " netrw
 let g:netrw_preview = 1
-
-"goyo
-nnoremap <Leader>g :Goyo 72<CR>  
-function! s:goyo_enter()
-  SoftPencil
-  Limelight 0.8
-  silent !tmux set status off
-  silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
-  set nocursorline
-  set textwidth=71
-  set noshowmode
-  set noshowcmd
-  set scrolloff=999
-  set showbreak=
-  "set formatoptions=tanq1
-  set com=fb:-
-endfunction
-
-function! s:goyo_leave()
-  NoPencil
-  Limelight!
-  silent !tmux set status on
-  silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
-  set cursorline
-  set textwidth=79
-  set showmode
-  set showcmd
-  set scrolloff=0
-  set showbreak=↪\ 
-  "set formatoptions=crnwq1
-  set com=:--
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 "interesting words
 nnoremap <silent> <leader>k :call InterestingWords('n')<cr>
